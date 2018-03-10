@@ -9,7 +9,9 @@ can input Chinese character into konsole terminal.
 sbt-repositories
 ----------------
 rename to `repositories` and put into `~/.sbt` directory
+`sbt` put downloaded jars into `~/.ivy2` directory
 
 maven-settings.xml
 ------------------
 rename to `settings.xml` and put into `/etc/maven/`
+`maven` put downloaded jars into `~/.m2` directory
