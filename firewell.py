@@ -10,6 +10,13 @@
 #   $ sudo apt install python-pip
 #   $ sudo pip install shadowsocks
 #
+# Thanks to the free ss providers:
+#
+#  http://en.ss8.fun
+#  http://global.ishadowsocks.net
+#  http://en.ishadowx.net
+#
+#
 
 import re
 import requests
@@ -19,6 +26,9 @@ import sys
 import time
 import signal
 import subprocess
+
+
+SECRET_URL='http://en.ishadowx.net'
 
 
 class Account:
@@ -88,7 +98,7 @@ def test_speed(account):
   pid = os.fork()
 
   if pid: # parent process
-    time.sleep(0.3) # 300 ms
+    time.sleep(0.8) # 800 ms
 
     command = 'curl --socks5-hostname 127.0.0.1:1080 -# -Lo /dev/null -w "time_total:%{time_total}" www.google.com'
     try:
@@ -142,7 +152,7 @@ if __name__ == '__main__':
     sys.exit(127)
 
   # accounts = ShadowSocksAccounts('https://go.ishadowx.net')
-  accounts = ShadowSocksAccounts('https://global.ishadowx.net')
+  accounts = ShadowSocksAccounts(SECRET_URL)
 
   while True:
     # prompt
