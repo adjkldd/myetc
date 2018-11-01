@@ -1,0 +1,2 @@
+http_proxy=http://172.20.10.11:8118
+https_proxy=https://172.20.10.11:8118
